@@ -22,26 +22,30 @@ int max_sub_sum(int *nums,int length)
         return 0;
     }
     int highest_Number = *nums;
-    for(int i=0; i<length; i++)
+    for(int j=0;j<length;j++)
     {
-        int current_Sum = *(nums + i);
-        while(i != length)
-        {   
-            i++;
-            if(current_Sum + *(nums + i)>current_Sum)
-            {
-                current_Sum = current_Sum + *(nums + i);
-            }
-            else
-            {
-                i = length;
-            }
-            
-        }
-        if(current_Sum> highest_Number)
+        for(int i=0; i<length; i++)
         {
-            highest_Number = current_Sum;
-        }
+            int current_Sum = *(nums + i);
+            while(i != length)
+            {   
+                i++;
+                if(current_Sum + *(nums + i)>current_Sum)
+                {
+                    current_Sum = current_Sum + *(nums + i);
+                }
+                else
+                {
+                    i = length;
+                }
+                
+            }
+            if(current_Sum> highest_Number)
+            {
+                highest_Number = current_Sum;
+            }
+        }  
     }
+
     return highest_Number;
 }
