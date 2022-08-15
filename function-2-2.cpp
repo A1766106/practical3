@@ -21,7 +21,7 @@ int max_sub_sum(int *nums,int length)
     {
         return 0;
     }
-    int globalSum = -1;
+    int globalSum = 0;
     for(int i=0; i<length; i++)
     {
         int ptr = i + 1;
