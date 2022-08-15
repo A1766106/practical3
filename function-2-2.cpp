@@ -24,15 +24,12 @@ int max_sub_sum(int *nums,int length)
     int globalSum = 0;
     for(int i=0; i<length; i++)
     {
-        int ptr = i + 1;
         int running_sum = *(nums+i);
-        while(ptr < length)
-        {   
-            running_sum += *(nums+ptr);
-            globalSum = max(globalSum,running_sum);
-
-            ptr++;
-            
+        globalSum = max(globalSum,running_sum);  
+        for(int j=i+1; j<length; j++)
+        { 
+            running_sum += *(nums+j);
+            globalSum = max(globalSum,running_sum);  
         }
     }
     return globalSum;
