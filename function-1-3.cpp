@@ -14,9 +14,9 @@ void copy_integers(int old_array[],int new_array[],int length)
     {
         *(ptr_New + i)= *(ptr_Old + i);
     }
-    for(int i=0; i<length; i++)
-    {
-        cout << *(ptr_New+i) << " ";
-    }
+    // for(int i=0; i<length; i++)
+    // {
+    //     cout << *(ptr_New+i) << " ";
+    // }
     return;
 }
