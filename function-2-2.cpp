@@ -21,27 +21,19 @@ int max_sub_sum(int *nums,int length)
     {
         return 0;
     }
-    int highest_Number = *nums;
+    int globalSum = -1;
     for(int i=0; i<length; i++)
     {
-        int current_Sum = *(nums + i);
-        while(i != length)
+        int ptr = i + 1;
+        int running_sum = *(nums+i);
+        while(ptr < length)
         {   
-            i++;
-            if(current_Sum + *(nums + i)>current_Sum)
-            {
-                current_Sum = current_Sum + *(nums + i);
-            }
-            else
-            {
-                i = length;
-            }
+            running_sum += *(nums+ptr);
+            globalSum = max(globalSum,running_sum);
+
+            ptr++;
             
         }
-        if(current_Sum> highest_Number)
-        {
-            highest_Number = current_Sum;
-        }
     }
-    return highest_Number;
+    return globalSum;
 }
