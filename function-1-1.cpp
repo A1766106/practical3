@@ -16,7 +16,14 @@ void string_2d_copy(std::string first[][2], std::string second[][2], int n)
     {
         for(int j=0; j<2; j++)
         {
-            cout << second[i][j] << " ";
+            if(j!=1)
+            {
+              cout << second[i][j] << " ";  
+            }
+            else
+            {
+                cout << second[i][j];
+            } 
         }
         cout << endl;
     }
